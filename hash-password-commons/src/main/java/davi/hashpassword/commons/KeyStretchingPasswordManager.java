@@ -1,4 +1,4 @@
-package davi.hashpassword;
+package davi.hashpassword.commons;
 
 public interface KeyStretchingPasswordManager {
 
