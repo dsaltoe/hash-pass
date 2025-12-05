@@ -8,8 +8,8 @@ import org.junit.jupiter.api.Test;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-import davi.hashpassword.KeyStretchingPasswordManager;
 import davi.hashpassword.base.AbstractKeyStretchingTest;
+import davi.hashpassword.commons.KeyStretchingPasswordManager;
 import davi.hashpassword.pbkdf2.impl.PBKDF2PasswordEncoder2;
 
 public class PBKDF2PasswordEncoderTest extends AbstractKeyStretchingTest {

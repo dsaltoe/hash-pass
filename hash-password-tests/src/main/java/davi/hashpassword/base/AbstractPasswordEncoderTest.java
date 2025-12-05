@@ -4,9 +4,10 @@ import static davi.hashpassword.base.TestUtils.getPassword;
 import static davi.hashpassword.base.TestUtils.getPassword2;
 import static org.junit.jupiter.api.Assertions.*;
 
-import davi.hashpassword.KeyStretchingPasswordManager;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
+
+import davi.hashpassword.commons.KeyStretchingPasswordManager;
 
 import java.util.regex.Pattern;
 

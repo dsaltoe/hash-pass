@@ -1,9 +1,7 @@
-package davi.hashpassword.tests;
-
-import davi.hashpassword.KeyStretchingPasswordManager;
+package davi.hashpassword.bcrypt;
 
 import davi.hashpassword.base.AbstractKeyStretchingTest;
-import davi.hashpassword.bcrypt.JBCryptPasswordEncoder;
+import davi.hashpassword.commons.KeyStretchingPasswordManager;
 
 import java.util.regex.Pattern;
 

@@ -11,6 +11,7 @@
 		<module>hash-password</module>
         <module>hash-password-commons</module>
         <module>hash-password-bcrypt</module>
+        <module>hash-password-tests</module>
     </modules>
 
 	<properties>

@@ -10,8 +10,8 @@ import javax.crypto.SecretKeyFactory;
 import javax.crypto.spec.PBEKeySpec;
 
 import davi.hashpassword.CryptUtils;
-import davi.hashpassword.KeyStretchingPasswordManager;
 import davi.hashpassword.SecureRandomBytesKeyGenerator;
+import davi.hashpassword.commons.KeyStretchingPasswordManager;
 
 public class PBKDF2PasswordEncoder2 implements KeyStretchingPasswordManager {
 	public static final String PBKDF2_ALGORITHM = "PBKDF2WithHmacSHA512";

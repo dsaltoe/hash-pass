@@ -3,7 +3,7 @@ package davi.hashpassword.pbkdf2;
 import java.security.NoSuchAlgorithmException;
 import java.security.spec.InvalidKeySpecException;
 
-import davi.hashpassword.KeyStretchingPasswordManager;
+import davi.hashpassword.commons.KeyStretchingPasswordManager;
 
 public class PBKDF2PasswordEncoder implements KeyStretchingPasswordManager {
 
