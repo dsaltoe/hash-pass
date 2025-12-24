@@ -81,12 +81,12 @@ public class PBKDF2PasswordEncoder2 implements KeyStretchingPasswordManager {
 	public boolean matches(String password, String hashedPasswordData) {
 		// Decode the hash into its parameters
 		String[] params = hashedPasswordData.split(":");
-		int iterations = Integer.parseInt(params[ITERATION_INDEX]);
+		int dataIterations = Integer.parseInt(params[ITERATION_INDEX]);
 		byte[] salt = fromHex(params[SALT_INDEX]);
 		byte[] hash = fromHex(params[PBKDF2_INDEX]);
 		
 		// Compute the hash of the provided password, using the same salt, iteration count, and hash length
-		byte[] testHash = pbkdf2(password.toCharArray(), salt, iterations, hash.length);
+		byte[] testHash = pbkdf2(password.toCharArray(), salt, dataIterations, hash.length);
 		
 		// Compare the hashes in constant time. The password is correct if both hashes match.
 		return CryptUtils.slowEquals(hash, testHash);
