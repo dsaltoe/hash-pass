@@ -26,7 +26,7 @@ public abstract class AbstractPasswordEncoderTest<T extends KeyStretchingPasswor
 
 	protected abstract Pattern getHashRegex();
 
-	public AbstractPasswordEncoderTest() {
+	protected AbstractPasswordEncoderTest() {
 		super();
 	}
 

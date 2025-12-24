@@ -61,7 +61,7 @@ public class PBKDF2PasswordEncoder2 implements KeyStretchingPasswordManager {
 			SecretKeyFactory skf = SecretKeyFactory.getInstance(PBKDF2_ALGORITHM);
 			return skf.generateSecret(spec).getEncoded();
 		} catch (NoSuchAlgorithmException | InvalidKeySpecException e) {
-			throw new RuntimeException(e);
+			throw new IllegalArgumentException(e);
 		}
 	}
 	
