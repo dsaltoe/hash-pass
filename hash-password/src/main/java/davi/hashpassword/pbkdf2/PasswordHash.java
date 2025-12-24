@@ -207,9 +207,12 @@ public class PasswordHash
         BigInteger bi = new BigInteger(1, array);
         String hex = bi.toString(16);
         int paddingLength = (array.length * 2) - hex.length();
-        if(paddingLength > 0)
-            return String.format("%0" + paddingLength + "d", 0).concat(hex);
-        else
+        if(paddingLength > 0) {
+            StringBuilder s = new StringBuilder("%0");
+            s.append(paddingLength);
+            s.append("d");
+            return String.format(s.toString(), 0).concat(hex);
+        } else
             return hex;
     }
 
