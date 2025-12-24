@@ -12,7 +12,7 @@ import davi.hashpassword.base.AbstractKeyStretchingTest;
 import davi.hashpassword.commons.KeyStretchingPasswordManager;
 import davi.hashpassword.pbkdf2.impl.PBKDF2PasswordEncoder2;
 
-public class PBKDF2PasswordEncoderTest extends AbstractKeyStretchingTest {
+class PBKDF2PasswordEncoderTest extends AbstractKeyStretchingTest {
 
 	@Override
 	protected KeyStretchingPasswordManager createAlg(Integer rounds) {
@@ -31,7 +31,7 @@ public class PBKDF2PasswordEncoderTest extends AbstractKeyStretchingTest {
 	}
 
 	@Test
-	public void hashedPasswordDataFormatPBKDF2() {
+	void hashedPasswordDataFormatPBKDF2() {
 		String genSalt = alg.genSalt();
 		String hashedPassword = alg.hash(getPassword(), genSalt);
 		Matcher matcher = getHashRegex().matcher(hashedPassword);
