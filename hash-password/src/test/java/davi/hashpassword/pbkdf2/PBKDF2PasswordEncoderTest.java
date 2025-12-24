@@ -5,6 +5,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 import org.junit.jupiter.api.Test;
 
+import java.util.logging.Logger;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
@@ -13,6 +14,8 @@ import davi.hashpassword.commons.KeyStretchingPasswordManager;
 import davi.hashpassword.pbkdf2.impl.PBKDF2PasswordEncoder2;
 
 class PBKDF2PasswordEncoderTest extends AbstractKeyStretchingTest {
+
+	private static final Logger logger = Logger.getLogger(PBKDF2PasswordEncoderTest.class.getName());
 
 	@Override
 	protected KeyStretchingPasswordManager createAlg(Integer rounds) {
@@ -41,9 +44,9 @@ class PBKDF2PasswordEncoderTest extends AbstractKeyStretchingTest {
 		String salt = matcher.group(2);
 		String hashedKey = matcher.group(3);
 		
-		System.out.println(rounds);
-		System.out.println(salt);
-		System.out.println(hashedKey);
+		logger.info(rounds);
+		logger.info(salt);
+		logger.info(hashedKey);
 
 		assertEquals(getDefaultRounds().toString(), rounds);
 		assertEquals(genSalt, salt);
