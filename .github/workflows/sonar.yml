@@ -1,0 +1,27 @@
+name: Análise SonarCloud
+
+on:
+  push:
+    branches: [ "main", "master", "feature/**" ]
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  sonarcloud_analise:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          # Desabilita o clone superficial para melhor análise de PRs
+          fetch-depth: 0
+
+      - name: SonarCloud Scan
+        uses: SonarSource/sonarcloud-github-action@master
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+        with:
+          args: >
+            -Dsonar.organization=dsaltoe
+            -Dsonar.projectKey=dsaltoe_hash-pass
+            # Adicione outros parâmetros de análise conforme necessário
