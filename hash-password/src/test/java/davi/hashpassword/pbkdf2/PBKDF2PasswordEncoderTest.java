@@ -1,4 +1,4 @@
-package davi.hashpassword.tests;
+package davi.hashpassword.pbkdf2;
 
 import static davi.hashpassword.base.TestUtils.getPassword;
 import static org.junit.jupiter.api.Assertions.*;
