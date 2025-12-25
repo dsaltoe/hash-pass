@@ -7,11 +7,6 @@ import davi.hashpassword.commons.KeyStretchingPasswordManager;
 
 public class PBKDF2PasswordEncoder implements KeyStretchingPasswordManager {
 
-
-	public PBKDF2PasswordEncoder() {
-		// TODO algorithm parameters
-	}
-
 	@Override
 	public String genSalt() {
         return new String(PasswordHash.generateSalt());
