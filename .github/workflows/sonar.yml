@@ -37,12 +37,7 @@ jobs:
           -Dsonar.projectKey=dsaltoe_hash-pass
           -Dsonar.organization=dsaltoe
           -Dsonar.host.url=https://sonarcloud.io
-
-      - name: Check Quality Gate
-        uses: sonarsource/sonarqube-quality-gate-action@master
-        timeout-minutes: 5
-        env:
-          SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
+          -Dsonar.qualitygate.wait=true
 
 #  sonarqube:
 #    runs-on: ubuntu-latest
